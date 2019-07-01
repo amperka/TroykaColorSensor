@@ -161,6 +161,16 @@ typedef enum {
   TCS34725_GAIN_60X = 0x03  /**<  60x gain */
 } tcs34725Gain_t;
 
+// __TROYKACOLORSENSOR_H__ start
+struct RGB {
+public:
+    byte red;
+    byte green;
+    byte blue;
+};
+// __TROYKACOLORSENSOR_H__ end
+
+
 /*!
  *  @brief  Class that stores state and functions for interacting with
  *          TCS34725 Color Sensor
@@ -192,6 +202,11 @@ public:
   void setIntLimits(uint16_t l, uint16_t h);
   void enable();
   void disable();
+
+// __TROYKACOLORSENSOR_H__ start
+  void colorRead(uint8_t* r, uint8_t* g, uint8_t* b);
+  RGB colorRead(void);
+// __TROYKACOLORSENSOR_H__ end
 
 private:
   TwoWire *_wire;
