@@ -599,3 +599,25 @@ void Adafruit_TCS34725::setIntLimits(uint16_t low, uint16_t high) {
   write8(0x06, high & 0xFF);
   write8(0x07, high >> 8);
 }
+
+// __TROYKACOLORSENSOR_H__ start
+
+void Adafruit_TCS34725::colorRead (uint8_t *r, uint8_t *g, uint8_t *b)
+{
+  uint16_t red, green, blue, clear;
+  getRawData(&red, &green, &blue, &clear);
+  uint32_t sum = clear;
+  float rf, gf, bf;
+  rf = red; rf /= sum;
+  gf = green; gf /= sum;
+  bf = blue; bf /= sum;
+  *r = 256 * rf; *g = 256 * gf; *b = 256 * bf;
+}
+
+RGB Adafruit_TCS34725::colorRead(void) {
+  RGB color;
+  colorRead(&color.red, &color.green, &color.blue);
+  return color;
+}
+
+// __TROYKACOLORSENSOR_H__ end
