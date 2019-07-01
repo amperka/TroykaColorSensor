@@ -74,7 +74,7 @@ uint8_t Adafruit_TCS34725::read8(uint8_t reg) {
 #endif
   _wire->endTransmission();
 
-  _wire->requestFrom(_i2caddr, 1);
+  _wire->requestFrom((int)_i2caddr, 1);
 #if ARDUINO >= 100
   return _wire->read();
 #else
@@ -99,7 +99,7 @@ uint16_t Adafruit_TCS34725::read16(uint8_t reg) {
 #endif
   _wire->endTransmission();
 
-  _wire->requestFrom(_i2caddr, 2);
+  _wire->requestFrom((int)_i2caddr, 2);
 #if ARDUINO >= 100
   t = _wire->read();
   x = _wire->read();
