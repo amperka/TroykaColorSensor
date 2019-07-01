@@ -415,7 +415,7 @@ uint16_t Adafruit_TCS34725::calculateColorTemperature_dn40(uint16_t r,
                                                            uint16_t g,
                                                            uint16_t b,
                                                            uint16_t c) {
-  int rc;              /* Error return code */
+  //int rc;              /* Error return code */
   uint16_t r2, g2, b2; /* RGB values minus IR component */
   int gl;              /* Results of the initial lux conversion */
   uint8_t gain_int;    /* Gain multiplier as a normal integer */
@@ -506,14 +506,14 @@ uint16_t Adafruit_TCS34725::calculateColorTemperature_dn40(uint16_t r,
    *       < +/- 0.5 lux, where the digitization error can be calculated via:
    *       'DER = (+/-2) / CPL'.
    */
-  float cpl =
-      (((256 - _tcs34725IntegrationTime) * 2.4f) * gain_int) / (1.0f * 310.0f);
+  //float cpl =
+  //    (((256 - _tcs34725IntegrationTime) * 2.4f) * gain_int) / (1.0f * 310.0f);
 
   /* Determine lux accuracy (+/- lux) */
-  float der = 2.0f / cpl;
+  //float der = 2.0f / cpl;
 
   /* Determine the maximum lux value */
-  float max_lux = 65535.0 / (cpl * 3);
+  //float max_lux = 65535.0 / (cpl * 3);
 
   /* Lux is a function of the IR-compensated RGB channels and the associated
    * color coefficients, with G having a particularly heavy influence to
@@ -527,7 +527,7 @@ uint16_t Adafruit_TCS34725::calculateColorTemperature_dn40(uint16_t r,
        1.000f * (float)g2 + /** Green coefficient. */
        -0.444f * (float)b2; /** Blue coefficient. */
 
-  float lux = gl / cpl;
+  //float lux = gl / cpl;
 
   /* A simple method of measuring color temp is to use the ratio of blue */
   /* to red light, taking IR cancellation into account. */
