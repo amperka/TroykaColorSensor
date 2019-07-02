@@ -1,4 +1,25 @@
-# Adafruit TCS34725 Color Sensor Driver [![Build Status](https://travis-ci.com/adafruit/Adafruit_TCS34725.svg?branch=master)](https://travis-ci.com/adafruit/Adafruit_TCS34725)
+# TroykaColorSensor
+
+Библиотека Arduino для RGB сенсора, построенного на чипе TSC34725
+
+Установка библиотеки
+====================
+
+В Arduino IDE выберите пункт меню «Скетч» ? «Подключить библиотеку» ?
+«Добавить .ZIP библиотеку…». В появившемся окне выберите скачаный архив с
+библиотекой. Установка завершена.
+
+This Arduino library for TSC34725 RGB sensor.
+
+Installation
+============
+
+Open Arduino IDE. Choose "Scketch" ? "Import library" ? "Add .ZIP library…".
+In appeared window choose downloaded zip.
+
+
+
+Adafruit TCS34725 Color Sensor Driver [![Build Status](https://travis-ci.com/adafruit/Adafruit_TCS34725.svg?branch=master)](https://travis-ci.com/adafruit/Adafruit_TCS34725)
 
 <a href="https://www.adafruit.com/product/1334"><img src="assets/board.jpg?raw=true" width="500px"></a>
 
