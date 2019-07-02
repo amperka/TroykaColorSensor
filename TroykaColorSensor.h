@@ -22,11 +22,12 @@ public:
 
 class TroykaColorSensor : public Adafruit_TCS34725 {
 public:
-  TroykaColorSensor(tcs34725IntegrationTime_t it = TCS34725_INTEGRATIONTIME_2_4MS,
-                    tcs34725Gain_t g = TCS34725_GAIN_1X) : Adafruit_TCS34725(it, g) {}
-  
-  void colorRead(uint8_t* r, uint8_t* g, uint8_t* b);
-  RGB colorRead(void);
+    TroykaColorSensor(tcs34725IntegrationTime_t it = TCS34725_INTEGRATIONTIME_2_4MS,
+        tcs34725Gain_t g = TCS34725_GAIN_1X)
+        : Adafruit_TCS34725(it, g) {}
+
+    void colorRead(uint8_t* r, uint8_t* g, uint8_t* b);
+    RGB colorRead(void);
 };
 
 #endif // __TROYKAPROXIMITY_H__

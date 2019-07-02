@@ -10,18 +10,17 @@
 
 #include "TroykaColorSensor.h"
 
-void TroykaColorSensor::colorRead (uint8_t *r, uint8_t *g, uint8_t *b) {
-  uint16_t red, green, blue, baseLevel;
-  getRawData(&red, &green, &blue, &baseLevel);
+void TroykaColorSensor::colorRead(uint8_t* r, uint8_t* g, uint8_t* b) {
+    uint16_t red, green, blue, baseLevel;
+    getRawData(&red, &green, &blue, &baseLevel);
 
-  *r = (uint8_t)(256L * red / baseLevel); 
-  *g = (uint8_t)(256L * green / baseLevel); 
-  *b = (uint8_t)(256L * blue / baseLevel);
+    *r = (uint8_t)(256L * red / baseLevel);
+    *g = (uint8_t)(256L * green / baseLevel);
+    *b = (uint8_t)(256L * blue / baseLevel);
 }
 
 RGB TroykaColorSensor::colorRead(void) {
-  RGB color;
-  colorRead(&color.red, &color.green, &color.blue);
-  return color;
+    RGB color;
+    colorRead(&color.red, &color.green, &color.blue);
+    return color;
 }
-
