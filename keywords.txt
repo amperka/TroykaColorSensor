@@ -1,0 +1,40 @@
+#######################################
+# Syntax Coloring Map For PID Library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+RGB				KEYWORD1
+TroykaColorSensor		KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin				KEYWORD2
+setGain				KEYWORD2
+getRawData			KEYWORD2
+colorRead			KEYWORD2
+calculateColoreTemperature	KEYWORD2
+calculateLux			KEYWORD2
+setInterrupt			KEYWORD2
+clearInterrupt			KEYWORD2
+setIntLimits			KEYWORD2
+enable				KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+TCS34725_GAIN_1X		LITERAL1
+TCS34725_GAIN_4X		LITERAL1
+TCS34725_GAIN_16X		LITERAL1
+TCS34725_GAIN_60X		LITERAL1
+TCS34725_INTEGRATIONTIME_2_4MS	LITERAL1
+TCS34725_INTEGRATIONTIME_24MS	LITERAL1
+TCS34725_INTEGRATIONTIME_50MS	LITERAL1
+TCS34725_INTEGRATIONTIME_101MS	LITERAL1
+TCS34725_INTEGRATIONTIME_154MS	LITERAL1
+TCS34725_INTEGRATIONTIME_700MS	LITERAL1
