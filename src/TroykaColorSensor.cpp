@@ -14,12 +14,17 @@ void TroykaColorSensor::colorRead(uint8_t* r, uint8_t* g, uint8_t* b) {
     uint16_t red, green, blue, baseLevel;
     getRawData(&red, &green, &blue, &baseLevel);
 
-    *r = (uint8_t)(256L * red / baseLevel);
+    float redFixed = (float)red;
     // float constants is inversely proportional to the sensitivity of
-    // color component sensors (reduced to red). You can get it from 
+    // color component sensors (reduced to red). You can get it from
     // datasheet (figure 2, page 6): https://cdn-shop.adafruit.com/datasheets/TCS34725.pdf
-    *g = (uint8_t)(1.354 * 256L * green / baseLevel);
-    *b = (uint8_t)(1.571 * 256L * blue / baseLevel);
+    float greenFixed = (float)green * 1.354;
+    float blueFixed = (float)blue * 1.571;
+
+    float max = (redFixed > greenFixed && redFixed > blueFixed) ? redFixed : (greenFixed > blueFixed) ? greenFixed : blueFixed;
+    *r = (uint8_t)(255 * redFixed / max);
+    *g = (uint8_t)(255 * greenFixed / max);
+    *b = (uint8_t)(255 * blueFixed / max);
 }
 
 RGB TroykaColorSensor::colorRead(void) {
