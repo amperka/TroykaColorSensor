@@ -21,10 +21,10 @@ void TroykaColorSensor::colorRead(uint8_t* r, uint8_t* g, uint8_t* b) {
     float greenFixed = (float)green * 1.354;
     float blueFixed = (float)blue * 1.571;
 
-    float max = (redFixed > greenFixed && redFixed > blueFixed) ? redFixed : (greenFixed > blueFixed) ? greenFixed : blueFixed;
-    *r = (uint8_t)(255 * redFixed / max);
-    *g = (uint8_t)(255 * greenFixed / max);
-    *b = (uint8_t)(255 * blueFixed / max);
+    float maxFixed = max(redFixed,max(greenFixed, blueFixed));
+    *r = (uint8_t)(255 * redFixed / maxFixed);
+    *g = (uint8_t)(255 * greenFixed / maxFixed);
+    *b = (uint8_t)(255 * blueFixed / maxFixed);
 }
 
 RGB TroykaColorSensor::colorRead(void) {
